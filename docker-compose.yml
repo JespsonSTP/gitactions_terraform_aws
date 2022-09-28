@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  globaltechnews:
+      build: 
+        context: globaltechnews
+        args: 
+        - DEV=true
+      command: sh -c "python manage.py runserver 0.0.0.0:8000"
+      volumes:
+        - ./globaltechnews:/app
+      ports:
+        - "8000:8000"
+    #links:
+    #   - database
